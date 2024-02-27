@@ -1,0 +1,22 @@
+I like tea
+I like chocolate
+I like candy
+I like drink
+<<<<<<< HEAD
+I like reading
+I like running
+I like playing
+I like Cthulhu Mythos very much
+I like stories of SCP
+I like stories of Touhou
+I like biology
+=======
+I like Cthulhu Mythos
+I like stories of SCP
+I like stories of Touhou
+I like apples
+I like watermelons
+I like grapes
+I like music
+I like you
+>>>>>>> Alex
