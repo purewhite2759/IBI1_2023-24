@@ -1,0 +1,1 @@
+During the practical I learnt version control. I learnt how to use Git and GitHub and I also tried to make a simple website with GitHub pages.
