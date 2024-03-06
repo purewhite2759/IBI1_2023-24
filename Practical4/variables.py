@@ -5,6 +5,10 @@ d = a-b
 # d=4
 e = b-c
 # e=6
+if d>e:
+    print("running training have a greater improvment")
+else:
+    print("running and strength training have a greater improvment")
 # d<e, running and strength training have a greater improvment.
 x=6>5
 y=7<1
