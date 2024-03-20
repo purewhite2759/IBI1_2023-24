@@ -7,7 +7,7 @@ print('The average number of hours spent on sleeping',activity['sleeping'],'hour
 import matplotlib.pyplot as plt
 #parameter setting
 activity_labels=['sleeping','classes','studying','TV','music','other']
-time=[8,6,3.5,2,1,3.5]
+time=[activity['sleeping'],activity['classes'],activity['studying'],activity['TV'],activity['music'],activity['other']]
 #draw the figure
 plt.figure()
 plt.pie(time,labels=activity_labels)
