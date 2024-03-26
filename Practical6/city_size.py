@@ -5,6 +5,7 @@ uk_population=[0.56,0.62,0.04,9.7]
 uk_ordered_population=sorted(uk_population)
 uk_ordered_city=[]
 #sort uk_city in population order
+#use dictionary and for loop to create the new list
 for i in range (len(uk_ordered_population)):
     uk_ordered_city.append(uk[uk_ordered_population[i]])
 print(uk_ordered_population)
@@ -19,6 +20,7 @@ for i in range (len(cn_ordered_population)):
 print(cn_ordered_population)
 print('<'.join(cn_ordered_city))
 #create bar plots
+#import modules in python
 import matplotlib.pyplot as plt
 import numpy as np
 #parameter setting
