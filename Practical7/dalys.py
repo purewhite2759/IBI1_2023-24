@@ -13,7 +13,7 @@ print(dalys_data.iloc[0,3]) #test if it works
 
 #show the fourth column (the DALYs) from every 10th row
 #starting from the first row, for the rst 100 rows
-print(dalys_data.iloc[0:100:10,3]) #how can there be 11 rows?
+print(dalys_data.iloc[0:101:10,3])
 
 #show DALYs for all rows corresponding to Afghanistan.
 #identify which rows to show
