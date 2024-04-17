@@ -33,48 +33,44 @@ def spatial_SIR(time_point):
                 #if in infected stage, firstly, work on his neighbors: check whether the neighbour can be infected (whether he is in stage susceptible). if so, use random to determine whether he is infected
                 #                      then, work on himself: use random to determine whether he is recovered
                 #special cases: for persons who live at edge, they don't have 8 neighbours. these people are recognized by following way.
-                leftup=(i==0 and j==0)
-                left=(i==0 and j!=0 and j!=99)
-                leftdown=(i==0 and j==99)
-                up=(i!=0 and i!=99 and j==0)
-                down=(i!=0 and i!=99 and j==99)
-                rightup=(i==99 and j==0)
-                right=(i==99 and j!=0 and j!=99)
-                rightdown=(i==99 and j==99)
+                left= i==0
+                right= i==99
+                up= j==0
+                down= j==99
                 if population[i,j]==1:#check whether the person is infected
                     
                     #the first 'if group' is used as an example
-                    if not (leftup or left or leftdown or up or rightup):#to recognize and inhibit some of the people living at the edge from doing the following
+                    if not (left or up):#to recognize and inhibit some of the people living at the edge from doing the following
                         if population[i-1,j-1]==0:#to check whether this neighbour can be infected
                             if np.random.random()<beta:#to determine whether he is infected
                                 new_population[i-1,j-1]=1
                     
                     #the others are just like that
-                    if not (leftup or left or leftdown):
+                    if not (left):
                         if population[i-1,j]==0:
                             if np.random.random()<beta:
                                 new_population[i-1,j]=1
-                    if not (leftup or left or leftdown or down or rightdown):
+                    if not (left or down):
                         if population[i-1,j+1]==0:
                             if np.random.random()<beta:
                                 new_population[i-1,j+1]=1
-                    if not (leftup or up or rightup):
+                    if not (up):
                         if population[i,j-1]==0:
                             if np.random.random()<beta:
                                 new_population[i,j-1]=1
-                    if not (leftdown or down or rightdown):
+                    if not (down):
                         if population[i,j+1]==0:
                             if np.random.random()<beta:
                                 new_population[i,j+1]=1
-                    if not (leftup or up or rightup or right or rightdown):
+                    if not (right or up):
                         if population[i+1,j-1]==0:
                             if np.random.random()<beta:
                                 new_population[i+1,j-1]=1
-                    if not (rightup or right or rightdown):
+                    if not (right):
                         if population[i+1,j]==0:
                             if np.random.random()<beta:
                                 new_population[i+1,j]=1
-                    if not (leftdown or down or rightup or right or rightdown):
+                    if not (right or down):
                         if population[i+1,j+1]==0:
                             if np.random.random()<beta:
                                 new_population[i+1,j+1]=1
@@ -89,9 +85,11 @@ def spatial_SIR(time_point):
 
 #draw figures showing the distrbution of the population
 plt.figure(1,figsize=(6,4),dpi=150)
-plt.imshow(spatial_SIR(10),cmap='viridis',interpolation='nearest')
+plt.imshow(spatial_SIR(0),cmap='viridis',interpolation='nearest')
 plt.figure(2,figsize=(6,4),dpi=150)
-plt.imshow(spatial_SIR(50),cmap='viridis',interpolation='nearest')
+plt.imshow(spatial_SIR(10),cmap='viridis',interpolation='nearest')
 plt.figure(3,figsize=(6,4),dpi=150)
+plt.imshow(spatial_SIR(50),cmap='viridis',interpolation='nearest')
+plt.figure(4,figsize=(6,4),dpi=150)
 plt.imshow(spatial_SIR(100),cmap='viridis',interpolation='nearest')
 plt.show()
