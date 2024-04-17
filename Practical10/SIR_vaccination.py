@@ -58,7 +58,7 @@ def SIR(vaccination):
             #for each person, draw random number to determine whether he goes into next stage, and record in new_population
             if population[j]=='S':
                 betacheck=np.random.random()
-                if betacheck<=(beta*population.count('I')/(S+I)):
+                if betacheck<=(beta*population.count('I')/(S+I+R+V)):
                     new_population.append('I')
                 else:
                     new_population.append('S')
