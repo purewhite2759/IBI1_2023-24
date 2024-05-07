@@ -1,0 +1,23 @@
+TEST 1
+Seq1: SC6A4_HUMAN 
+Seq2: SC6A4_MOUSE
+Scores: 3137.0
+Percentage of identity: 0.9253968253968254
+
+TEST 2
+Seq1: SC6A4_HUMAN 
+Seq2: SC6A4_RAT
+Scores: 3107.0
+Percentage of identity: 0.9174603174603174
+
+TEST 3
+Seq1: SC6A4_MOUSE 
+Seq2: SC6A4_RAT
+Scores: 3261.0
+Percentage of identity: 0.9682539682539683
+
+sequences of mouse and rat are most closely related.
+reason: they have the highest score and percentage of identity.
+
+mouse is a better model organism for human based on data analysed here.
+reason: score and percentage of identity are higher in TEST 1 than those in TEST 2.
