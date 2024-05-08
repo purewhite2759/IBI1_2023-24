@@ -1,6 +1,9 @@
 #import modules
 import os
 import blosum as bl #used to read BLOSUM62 matrix
+#the module 'blosum' is a small module for easy access to BLOSUM matrices without dependencies
+#here in this code only BLOSUM62 matrix is used
+#the module accessed:https://pypi.org/project/blosum/   May 7, 2024
 
 #input files
 os.chdir('C:/Users/13327/Desktop/schoolworks/classes/IBI/class_materials/practical13/')
@@ -44,6 +47,11 @@ def alignment(seq1_str,seq2_str):
         if seq1[i]==seq2[i]:
             identity+=1
     percentage=identity/index
+
+    #print output
     return print('Seq1:',dir[seq1_str],'\nSeq2:',dir[seq2_str],'\nScores:',score,'\nPercentage of identity:',percentage)
 
+#show the three comparisons
+alignment(human_str,mouse_str)
+alignment(human_str,rat_str)
 alignment(mouse_str,rat_str)
