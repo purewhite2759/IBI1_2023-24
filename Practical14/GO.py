@@ -51,7 +51,6 @@ CC=[]
 class GOHandler(xml.sax.ContentHandler):
     def __init__(self):
         self.namespace=''
-        self.id=''
     def startElement(self, tag, attributes):
         self.CurrentData=tag
     def endElement(self, tag):
@@ -64,8 +63,6 @@ class GOHandler(xml.sax.ContentHandler):
     def characters(self, content):
         if self.CurrentData=='namespace':
             self.namespace=content
-        if self.CurrentData=='id':
-            self.id=content
 
 parser=xml.sax.make_parser()
 parser.setFeature(xml.sax.handler.feature_namespaces, 0)
