@@ -90,3 +90,4 @@ plt.ylabel('frequency')
 
 plt.show()
 plt.clf()
+#on my computer, SAX API is faster
